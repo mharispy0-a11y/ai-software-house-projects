@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unknown Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0a;color:#e8e0d0;font-family:'Inter',sans-serif;}
+.navbar{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,169,110,0.2);padding:20px 5%;display:flex;justify-content:space-between;align-items:center;}
+.navbar-brand{font-family:'Playfair Display',serif;font-size:1.5rem;color:#C9A96E;font-weight:700;}
+.navbar-links{display:flex;gap:40px;align-items:center;}
+.navbar-links a{color:#e8e0d0;text-decoration:none;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s;}
+.navbar-links a:hover{color:#C9A96E;}
+.btn-reserve{background:#C9A96E;color:#0a0a0a;padding:10px 25px;border:none;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:1px;cursor:pointer;text-transform:uppercase;font-size:0.85rem;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 5% 60px;background:radial-gradient(ellipse at center,#1a1508 0%,#0a0a0a 70%);}
+.hero-badge{border:1px solid #C9A96E;color:#C9A96E;padding:6px 20px;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:30px;display:inline-block;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);font-weight:900;color:#e8e0d0;line-height:1.05;margin-bottom:25px;}
+.hero-tagline{font-size:1.1rem;color:#a09880;letter-spacing:1px;margin-bottom:10px;}
+.hero-sub{font-size:1rem;color:#706050;margin-bottom:50px;}
+.hero-btns{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+.btn-primary{background:#C9A96E;color:#0a0a0a;padding:16px 40px;font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:0.9rem;border:none;cursor:pointer;}
+.btn-secondary{background:transparent;color:#e8e0d0;padding:16px 40px;font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:0.9rem;border:1px solid #e8e0d0;cursor:pointer;}
+.section{padding:100px 5%;}
+.section-label{color:#C9A96E;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:15px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);color:#e8e0d0;margin-bottom:20px;}
+.section-line{width:60px;height:2px;background:#C9A96E;margin-bottom:50px;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-text{font-size:1.05rem;line-height:1.9;color:#a09880;}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.stat-card{background:rgba(201,169,110,0.05);border:1px solid rgba(201,169,110,0.2);padding:30px;text-align:center;}
+.stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#C9A96E;font-weight:700;}
+.stat-label{font-size:0.8rem;letter-spacing:2px;color:#706050;text-transform:uppercase;margin-top:5px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.service-card{background:rgba(255,255,255,0.02);border:1px solid rgba(201,169,110,0.15);padding:40px 30px;transition:border-color 0.3s;}
+.service-card:hover{border-color:#C9A96E;}
+.service-num{font-family:'Playfair Display',serif;font-size:3rem;color:rgba(201,169,110,0.2);font-weight:900;margin-bottom:20px;}
+.service-name{font-size:1.2rem;color:#e8e0d0;font-weight:600;margin-bottom:15px;}
+.service-desc{color:#706050;line-height:1.7;font-size:0.95rem;}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;}
+.menu-card{background:rgba(255,255,255,0.02);border:1px solid rgba(201,169,110,0.15);padding:30px;display:flex;justify-content:space-between;align-items:flex-start;}
+.menu-info h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:#e8e0d0;margin-bottom:8px;}
+.menu-info p{color:#706050;font-size:0.9rem;line-height:1.6;}
+.menu-price{color:#C9A96E;font-weight:700;font-size:1.1rem;white-space:nowrap;margin-left:20px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contact-badges{display:flex;flex-direction:column;gap:20px;margin-bottom:40px;}
+.badge{display:flex;align-items:center;gap:15px;}
+.badge-label{background:#C9A96E;color:#0a0a0a;padding:4px 10px;font-size:0.7rem;font-weight:700;letter-spacing:2px;}
+.badge-value{color:#a09880;font-size:0.95rem;}
+.contact-form{display:flex;flex-direction:column;gap:15px;}
+.contact-form input,.contact-form textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(201,169,110,0.2);padding:15px;color:#e8e0d0;font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;}
+.contact-form textarea{height:120px;resize:vertical;}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#C9A96E;}
+.footer{background:#050505;border-top:1px solid rgba(201,169,110,0.1);padding:40px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-brand{font-family:'Playfair Display',serif;color:#C9A96E;font-size:1.2rem;}
+.footer-text{color:#403830;font-size:0.85rem;}
+@media(max-width:768px){.about-grid,.contact-grid{grid-template-columns:1fr;}.services-grid{grid-template-columns:1fr;}.menu-grid{grid-template-columns:1fr;}.navbar-links{display:none;}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">Unknown Business</div>
+  <div class="navbar-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+    <button class="btn-reserve">Reserve</button>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-badge">EST. 2024</div>
+  <h1>Unknown Business</h1>
+  <p class="hero-tagline">Excellence and Quality You Can Trust</p>
+  <p class="hero-sub">We deliver exceptional service tailored to your needs.</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Reserve a Table</button>
+    <button class="btn-secondary">View Menu</button>
+  </div>
+</section>
+<section class="section" id="about" style="background:#0d0d0d;">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">About Unknown Business</h2>
+      <div class="section-line"></div>
+      <p class="about-text">Unknown Business is a premier business in Pakistan, dedicated to delivering exceptional experiences to every customer.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-number">10+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-card"><div class="stat-number">5K+</div><div class="stat-label">Happy Clients</div></div>
+      <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Awards Won</div></div>
+      <div class="stat-card"><div class="stat-number">4.9</div><div class="stat-label">Star Rating</div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="services">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Our Services</h2>
+  <div class="section-line"></div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-num">01</div><div class="service-name">Premium Service</div><p class="service-desc">World-class service tailored to your needs</p></div>
+    <div class="service-card"><div class="service-num">02</div><div class="service-name">Expert Consultation</div><p class="service-desc">Professional guidance from industry experts</p></div>
+    <div class="service-card"><div class="service-num">03</div><div class="service-name">Custom Solutions</div><p class="service-desc">Personalized solutions for every client</p></div>
+  </div>
+</section>
+<section class="section" id="menu" style="background:#0d0d0d;">
+  <div class="section-label">Our Offerings</div>
+  <h2 class="section-title">Featured Items</h2>
+  <div class="section-line"></div>
+  <div class="menu-grid">
+    <div class="menu-card"><div class="menu-info"><h3>Signature Special</h3><p>Our most popular offering</p></div><div class="menu-price">Rs. 1,500</div></div>
+    <div class="menu-card"><div class="menu-info"><h3>Premium Package</h3><p>A premium experience</p></div><div class="menu-price">Rs. 2,500</div></div>
+    <div class="menu-card"><div class="menu-info"><h3>Classic Choice</h3><p>A timeless favourite</p></div><div class="menu-price">Rs. 1,200</div></div>
+    <div class="menu-card"><div class="menu-info"><h3>Deluxe Option</h3><p>The ultimate experience</p></div><div class="menu-price">Rs. 3,000</div></div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Contact Us</h2>
+  <div class="section-line"></div>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-badges">
+        <div class="badge"><span class="badge-label">TEL</span><span class="badge-value">0300-0000000</span></div>
+        <div class="badge"><span class="badge-label">LOC</span><span class="badge-value">Pakistan</span></div>
+        <div class="badge"><span class="badge-label">HRS</span><span class="badge-value">Mon-Sun: 11:00 AM - 11:00 PM</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button class="btn-primary" style="padding:15px;">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-brand">Unknown Business</div>
+  <div class="footer-text">Built by AI Software House | Pakistan</div>
+  <div class="footer-text">All rights reserved 2024</div>
+</footer>
+</body>
+</html>
