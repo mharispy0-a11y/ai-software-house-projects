@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flaming Wings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #1a0800; color: #FFFFFF; overflow-x: hidden; scroll-behavior: smooth; }
+    h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
+    a { transition: opacity 0.2s, transform 0.2s; }
+    a:hover { opacity: 0.85; }
+    .slide { display: none; }
+    .slide.active { display: block; animation: fadeSlide 0.5s ease; }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 768px) {
+      .desktop-nav { display: none !important; }
+      h1 { font-size: 2.2rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;padding:16px 40px;
+            display:flex;justify-content:space-between;align-items:center;
+            background:#1a0800EE;backdrop-filter:blur(16px);
+            border-bottom:1px solid #E6394644;">
+  <div style="font-size:1.6rem;font-weight:900;color:#FFFFFF;letter-spacing:1px;">Flaming Wings</div>
+  <div class="desktop-nav" style="display:flex;gap:28px;">
+    <a href="#about" style="color:#FFFFFF;text-decoration:none;font-size:0.95rem;opacity:0.8;">About</a><a href="#menu" style="color:#FFFFFF;text-decoration:none;font-size:0.95rem;opacity:0.8;">Menu</a><a href="#catering" style="color:#FFFFFF;text-decoration:none;font-size:0.95rem;opacity:0.8;">Catering</a><a href="#contact" style="color:#FFFFFF;text-decoration:none;font-size:0.95rem;opacity:0.8;">Contact</a>
+  </div>
+  <a href="#contact"
+     style="background:#E63946;color:#FFFFFF;padding:10px 24px;
+            border-radius:50px;font-weight:700;text-decoration:none;font-size:0.9rem;">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;
+                text-align:center;padding:130px 40px 80px;position:relative;overflow:hidden;
+                background:radial-gradient(ellipse at 50% 40%, #E6394644 0%, #1a0800 65%);">
+  <div style="position:absolute;inset:0;opacity:0.07;
+              background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80') center/cover;"></div>
+  <div style="position:relative;max-width:840px;">
+    <div style="display:inline-block;background:#E6394633;border:1px solid #E63946;
+                border-radius:50px;padding:8px 22px;font-size:0.82rem;color:#FFD700;
+                margin-bottom:28px;letter-spacing:3px;text-transform:uppercase;">
+      FAST FOOD RESTAURANT &nbsp;·&nbsp; Pakistan
+    </div>
+    <h1 style="font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;color:#FFFFFF;
+               line-height:1.05;margin-bottom:20px;">Flaming Wings</h1>
+    <p style="font-size:1.25rem;color:#FFD700;margin-bottom:16px;font-style:italic;">&ldquo;Welcome to Flaming Wings&rdquo;</p>
+    <p style="color:#FFFFFF;opacity:0.65;margin-bottom:44px;line-height:1.85;
+              max-width:600px;margin-left:auto;margin-right:auto;">Flaming Wings is dedicated to delivering exceptional fast food restaurant services in Pakistan. We pride ourselves on quality, reliability, and putting our clients first.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#menu"
+         style="background:#E63946;color:#FFFFFF;padding:16px 40px;
+                border-radius:50px;font-weight:700;text-decoration:none;font-size:1rem;
+                box-shadow:0 8px 30px #E6394666;">Order Now</a>
+      <a href="#about"
+         style="background:transparent;color:#FFFFFF;padding:16px 40px;
+                border-radius:50px;font-weight:600;text-decoration:none;
+                font-size:1rem;border:2px solid #E6394666;">See Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding:90px 40px;background:#E6394615;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:60px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:280px;">
+      <span style="color:#FFD700;font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;">Our Story</span>
+      <h2 style="color:#FFFFFF;font-size:2.5rem;margin:12px 0 22px;">About Flaming Wings</h2>
+      <p style="color:#FFFFFF;opacity:0.8;line-height:1.9;font-size:1.05rem;">Flaming Wings is dedicated to delivering exceptional fast food restaurant services in Pakistan. We pride ourselves on quality, reliability, and putting our clients first.</p>
+    </div>
+    <div style="flex:1;min-width:280px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      
+        <div style="padding:28px;background:#1a0800;border-radius:14px;text-align:center;border:1px solid #E6394633;">
+          <div style="font-size:2rem;font-weight:900;color:#FFD700;">10+</div>
+          <div style="color:#FFFFFF;opacity:0.6;font-size:0.88rem;margin-top:6px;">Years Experience</div>
+        </div>
+        <div style="padding:28px;background:#1a0800;border-radius:14px;text-align:center;border:1px solid #E6394633;">
+          <div style="font-size:2rem;font-weight:900;color:#FFD700;">5K+</div>
+          <div style="color:#FFFFFF;opacity:0.6;font-size:0.88rem;margin-top:6px;">Happy Clients</div>
+        </div>
+        <div style="padding:28px;background:#1a0800;border-radius:14px;text-align:center;border:1px solid #E6394633;">
+          <div style="font-size:2rem;font-weight:900;color:#FFD700;">50+</div>
+          <div style="color:#FFFFFF;opacity:0.6;font-size:0.88rem;margin-top:6px;">Awards Won</div>
+        </div>
+        <div style="padding:28px;background:#1a0800;border-radius:14px;text-align:center;border:1px solid #E6394633;">
+          <div style="font-size:2rem;font-weight:900;color:#FFD700;">4.9★</div>
+          <div style="color:#FFFFFF;opacity:0.6;font-size:0.88rem;margin-top:6px;">Customer Rating</div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- MENU SLIDESHOW -->
+  <section id="menu" style="padding:90px 40px;background:#1a0800;">
+    <div style="text-align:center;margin-bottom:50px;">
+      <span style="color:#FFD700;font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;">What We Serve</span>
+      <h2 style="color:#FFFFFF;font-size:2.8rem;margin-top:12px;font-family:'Oswald',sans-serif;">Our Menu</h2>
+      <p style="color:#FFFFFF;opacity:0.55;margin-top:10px;">Fresh. Hot. Delivered with love.</p>
+    </div>
+    <div style="max-width:680px;margin:0 auto;">
+      <div class="slideshow-wrap">
+    <div class="slide active" style="text-align:center;padding:10px 20px;">
+      <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=700&q=85" alt="Drumsticks"
+           style="width:100%;max-width:520px;height:340px;object-fit:cover;border-radius:22px;
+                  border:3px solid #FFD700;box-shadow:0 0 50px #E63946AA;
+                  display:block;margin:0 auto;">
+      <h3 style="color:#FFD700;font-size:2rem;margin:22px 0 8px;font-family:'Oswald',sans-serif;">Drumsticks</h3>
+      <p style="color:#FFFFFF;opacity:0.75;font-size:1rem;max-width:420px;margin:0 auto 14px;">Crispy golden fried drumsticks, perfectly seasoned with our secret spice blend.</p>
+      <div style="font-size:1.7rem;font-weight:800;color:#F4A261;">Rs. 350</div>
+    </div>
+  
+    <div class="slide " style="text-align:center;padding:10px 20px;">
+      <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=700&q=85" alt="Chest Piece"
+           style="width:100%;max-width:520px;height:340px;object-fit:cover;border-radius:22px;
+                  border:3px solid #FFD700;box-shadow:0 0 50px #E63946AA;
+                  display:block;margin:0 auto;">
+      <h3 style="color:#FFD700;font-size:2rem;margin:22px 0 8px;font-family:'Oswald',sans-serif;">Chest Piece</h3>
+      <p style="color:#FFFFFF;opacity:0.75;font-size:1rem;max-width:420px;margin:0 auto 14px;">Juicy flame-grilled chicken chest piece, tender and full of flavour.</p>
+      <div style="font-size:1.7rem;font-weight:800;color:#F4A261;">Rs. 450</div>
+    </div>
+  
+    <div class="slide " style="text-align:center;padding:10px 20px;">
+      <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=700&q=85" alt="Wings"
+           style="width:100%;max-width:520px;height:340px;object-fit:cover;border-radius:22px;
+                  border:3px solid #FFD700;box-shadow:0 0 50px #E63946AA;
+                  display:block;margin:0 auto;">
+      <h3 style="color:#FFD700;font-size:2rem;margin:22px 0 8px;font-family:'Oswald',sans-serif;">Wings</h3>
+      <p style="color:#FFFFFF;opacity:0.75;font-size:1rem;max-width:420px;margin:0 auto 14px;">Crispy wings tossed in our signature hot sauce — addictively good.</p>
+      <div style="font-size:1.7rem;font-weight:800;color:#F4A261;">Rs. 280</div>
+    </div>
+  
+    <div class="slide " style="text-align:center;padding:10px 20px;">
+      <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=85" alt="Nuggets"
+           style="width:100%;max-width:520px;height:340px;object-fit:cover;border-radius:22px;
+                  border:3px solid #FFD700;box-shadow:0 0 50px #E63946AA;
+                  display:block;margin:0 auto;">
+      <h3 style="color:#FFD700;font-size:2rem;margin:22px 0 8px;font-family:'Oswald',sans-serif;">Nuggets</h3>
+      <p style="color:#FFFFFF;opacity:0.75;font-size:1rem;max-width:420px;margin:0 auto 14px;">Tender golden nuggets, perfect for the whole family.</p>
+      <div style="font-size:1.7rem;font-weight:800;color:#F4A261;">Rs. 320</div>
+    </div>
+  </div>
+      <div style="text-align:center;margin-top:28px;display:flex;justify-content:center;gap:14px;">
+        <button onclick="changeSlide(-1)"
+                style="background:#E63946;color:#FFFFFF;border:none;padding:13px 30px;
+                       border-radius:50px;font-size:1.3rem;cursor:pointer;"
+                onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">&#8592; Prev</button>
+        <button onclick="changeSlide(1)"
+                style="background:#E63946;color:#FFFFFF;border:none;padding:13px 30px;
+                       border-radius:50px;font-size:1.3rem;cursor:pointer;"
+                onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Next &#8594;</button>
+      </div>
+      <div style="text-align:center;margin-top:16px;" id="dot-container">
+    <span onclick="goToSlide(0)" class="dot"
+          style="display:inline-block;width:13px;height:13px;border-radius:50%;
+                 background:#FFD700;margin:0 6px;cursor:pointer;
+                 transition:background 0.3s;"></span>
+  
+    <span onclick="goToSlide(1)" class="dot"
+          style="display:inline-block;width:13px;height:13px;border-radius:50%;
+                 background:#555;margin:0 6px;cursor:pointer;
+                 transition:background 0.3s;"></span>
+  
+    <span onclick="goToSlide(2)" class="dot"
+          style="display:inline-block;width:13px;height:13px;border-radius:50%;
+                 background:#555;margin:0 6px;cursor:pointer;
+                 transition:background 0.3s;"></span>
+  
+    <span onclick="goToSlide(3)" class="dot"
+          style="display:inline-block;width:13px;height:13px;border-radius:50%;
+                 background:#555;margin:0 6px;cursor:pointer;
+                 transition:background 0.3s;"></span>
+  </div>
+    </div>
+  </section>
+
+  <!-- ALL ITEMS GRID -->
+  <section id="catering" style="padding:90px 40px;background:#E6394618;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:50px;">
+        <span style="color:#FFD700;font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;">Full Menu</span>
+        <h2 style="color:#FFFFFF;font-size:2.8rem;margin-top:12px;font-family:'Oswald',sans-serif;">All Items</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+        
+    <div style="background:#1a0800;border-radius:16px;padding:16px;
+                border:1px solid #E6394655;text-align:center;overflow:hidden;
+                transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'"
+         onmouseout="this.style.transform='none'">
+      <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=700&q=85" alt="Drumsticks"
+           style="width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+      <div style="color:#FFFFFF;font-weight:700;font-size:0.95rem;">Drumsticks</div>
+      <div style="color:#FFD700;font-weight:600;margin-top:5px;">Rs. 350</div>
+    </div>
+  
+    <div style="background:#1a0800;border-radius:16px;padding:16px;
+                border:1px solid #E6394655;text-align:center;overflow:hidden;
+                transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'"
+         onmouseout="this.style.transform='none'">
+      <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=700&q=85" alt="Chest Piece"
+           style="width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+      <div style="color:#FFFFFF;font-weight:700;font-size:0.95rem;">Chest Piece</div>
+      <div style="color:#FFD700;font-weight:600;margin-top:5px;">Rs. 450</div>
+    </div>
+  
+    <div style="background:#1a0800;border-radius:16px;padding:16px;
+                border:1px solid #E6394655;text-align:center;overflow:hidden;
+                transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'"
+         onmouseout="this.style.transform='none'">
+      <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=700&q=85" alt="Wings"
+           style="width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+      <div style="color:#FFFFFF;font-weight:700;font-size:0.95rem;">Wings</div>
+      <div style="color:#FFD700;font-weight:600;margin-top:5px;">Rs. 280</div>
+    </div>
+  
+    <div style="background:#1a0800;border-radius:16px;padding:16px;
+                border:1px solid #E6394655;text-align:center;overflow:hidden;
+                transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'"
+         onmouseout="this.style.transform='none'">
+      <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=85" alt="Nuggets"
+           style="width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+      <div style="color:#FFFFFF;font-weight:700;font-size:0.95rem;">Nuggets</div>
+      <div style="color:#FFD700;font-weight:600;margin-top:5px;">Rs. 320</div>
+    </div>
+  
+      </div>
+      <div style="text-align:center;margin-top:55px;padding:40px;background:#1a0800;border-radius:20px;border:1px solid #E6394633;">
+        <h3 style="color:#FFFFFF;font-size:1.6rem;margin-bottom:12px;font-family:'Oswald',sans-serif;">🎉 Catering & Bulk Orders</h3>
+        <p style="color:#FFFFFF;opacity:0.7;margin-bottom:22px;">Planning a party or corporate event? We offer custom catering packages with fresh preparation and timely delivery.</p>
+        <a href="#contact" style="background:#FFD700;color:#111;padding:15px 36px;border-radius:50px;
+                                  font-weight:700;text-decoration:none;font-size:1rem;">Get a Catering Quote</a>
+      </div>
+    </div>
+  </section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:90px 40px;background:#1a0800;border-top:1px solid #E6394633;">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <span style="color:#FFD700;font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;">Reach Out</span>
+    <h2 style="color:#FFFFFF;font-size:2.8rem;margin:12px 0 50px;">Contact Us</h2>
+    <div style="display:flex;justify-content:center;gap:50px;flex-wrap:wrap;margin-bottom:50px;">
+      
+      <div style="text-align:center;">
+        <div style="color:#FFD700;font-size:2.2rem;margin-bottom:10px;">📍</div>
+        <div style="color:#FFFFFF;font-size:1.1rem;font-weight:600;">Pakistan</div>
+        <div style="color:#FFFFFF;opacity:0.5;font-size:0.85rem;margin-top:4px;">Our Location</div>
+      </div>
+      
+        <div style="text-align:center;">
+          <div style="color:#FFD700;font-size:2.2rem;margin-bottom:10px;">🕐</div>
+          <div style="color:#FFFFFF;font-size:1.1rem;font-weight:600;">11 AM – 11 PM</div>
+          <div style="color:#FFFFFF;opacity:0.5;font-size:0.85rem;margin-top:4px;">Open Daily</div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:30px 40px;background:#E6394620;text-align:center;border-top:1px solid #E6394633;">
+  <p style="color:#FFFFFF;opacity:0.4;font-size:0.85rem;">
+    &copy; 2026 Flaming Wings &nbsp;|&nbsp; Built by AI Software House &nbsp;|&nbsp; Pakistan
+  </p>
+</footer>
+
+<script>
+  // SLIDESHOW
+  var cur = 0;
+  var slides = document.querySelectorAll('.slide');
+  var dots   = document.querySelectorAll('.dot');
+
+  function showSlide(n) {
+    if (!slides.length) return;
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function(s){ s.classList.remove('active'); });
+    dots.forEach(function(d){ d.style.background = '#555'; });
+    slides[cur].classList.add('active');
+    if (dots[cur]) dots[cur].style.background = '#FFD700';
+  }
+  function changeSlide(d) { showSlide(cur + d); }
+  function goToSlide(n)   { showSlide(n); }
+
+  if (slides.length > 0) setInterval(function(){ changeSlide(1); }, 4500);
+
+  // SMOOTH SCROLL
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var el = document.querySelector(a.getAttribute('href'));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
